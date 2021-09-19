@@ -1,0 +1,3 @@
+var validMountainArray = function (arr) {
+
+};
