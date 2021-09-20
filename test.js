@@ -19,7 +19,7 @@
 
 var time = function (n) {
   var t0 = performance.now();
-  const map = { 1: 1, 2: 1 }
+  const map = { 0: 1, 1: 1 }
   var fib = function (n, map) {
     if (!map[n]) {
       return map[n] = fib(n - 2, map) + fib(n - 1, map);
