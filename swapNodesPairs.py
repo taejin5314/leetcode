@@ -7,7 +7,10 @@ class ListNode:
 
 class Solution:
   def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
-    return 0
-
-problem = Solution()
-print(problem.swapPairs([1, 2, 3, 4]))
+    if head:
+      h = head.next
+      if h:
+        h.next, head.next = head, h.next
+        h.next.next = self.swapPairs(h.next.next)
+        return h
+    return head
