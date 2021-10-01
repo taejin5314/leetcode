@@ -6,19 +6,26 @@ class Solution:
       targetSum = sum(nums) // k
     else:
       return False
+
+    used = [False for _ in range(len(nums))]
     
-    def divideInSubset(nums, n, targetSum):
-      if targetSum == 0:
+    def divideInSubset(t, k, index):
+      if k == 0:
         return True
-      if n == 0 and targetSum != 0:
-        return False
+      if t == 0:
+        return divideInSubset(targetSum, k - 1, 0)
+      else:
+        for i in range(index, len(nums)):
+          if not used[i] and t - nums[i] >= 0:
+            used[i] = True
 
-      if nums[n-1] > targetSum:
-        return divideInSubset(nums, n-1, targetSum)
+            if divideInSubset(t - nums[i], k, i + 1):
+              return True
+            
+            used[i] = False
 
-      return divideInSubset(nums, n-1, targetSum) or divideInSubset(nums, n-1, targetSum - nums[n-1])
 
-    return divideInSubset(nums, len(nums), targetSum)
+    return True if divideInSubset(targetSum, k, 0) else False
 
 
 problem = Solution()
