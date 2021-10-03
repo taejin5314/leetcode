@@ -1,3 +1,5 @@
+from collections import defaultdict
+import collections
 from typing import DefaultDict, List
 
 class Solution:
@@ -17,11 +19,22 @@ class Solution:
           nx = cand[:i] + str(digit) + cand[i+1:]
           if nx not in deadends:
             adjList[cand].append(nx)
-        
-    print(nums)
 
+    if "0000" in deadends:
+      return -1
 
-    return 0
+    q = collections.deque([("0000", 0)])
+    visited = set()
+    while q:
+      cand, steps = q.popleft()
+
+      if cand == target:
+        return steps
+      for nx in adjList[cand]:
+        if nx not in visited:
+          visited.add(nx)
+          q.append((nx, steps+1))
+    return -1
 
 problem = Solution()
 print(problem.openLock(["0201","0101","0102","1212","2002"], "0202"))
