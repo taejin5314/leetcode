@@ -75,7 +75,7 @@ class Trie:
 
     return node.count
   
-  def searchPattern(self, node, target: str) -> int:
+  def startWithPattern(self, node, target: str) -> int:
     if target == '':
       if node.end:
         return node.count
@@ -84,22 +84,25 @@ class Trie:
     for i, elm in enumerate(target):
       if elm == '.':
         for c in node.next.keys():
-          return self.searchPattern(node.next[c], target[i+1:])
+          if target[i+1:] == '' and node.next[c].end:
+            return node.count
+          return self.startWithPattern(node.next[c], target[i+1:])
       elif elm in node.next:
         node = node.next[elm]
       else:
         return False
     
     return node.count
-
-
+    
 obj = Trie()
 obj.insert("apple")
-print(obj.search("app"))
 obj.insert("ape")
 obj.insert("app")
 print(obj.search("pp"))
 print(obj.search("apple"))
 print(obj.search("ap"))
 print(obj.startsWith("ap"))
-print(obj.searchPattern(obj.trieNode, "...."))
+print(obj.startWithPattern(obj.trieNode, "a.p"))
+# obj.insert('abc')
+# obj.insert('abd')
+# print(obj.startWithPattern(obj.trieNode, "a.."))
