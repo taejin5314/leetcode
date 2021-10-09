@@ -9,7 +9,7 @@ class TrieNode:
     curr = self
 
     for elm in word:
-      if elm not in self.next:
+      if elm not in curr.next:
         curr.next[elm] = TrieNode()
       curr = curr.next[elm]
     curr.end = True
@@ -88,3 +88,4 @@ class Solution:
 problem = Solution()
 print(problem.findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], ["oath","pea","eat","rain"]))
 print(problem.findWords([["a","b"],["c","d"]], ["abcb"]))
+print(problem.findWords([["o","a","b","n"],["o","t","a","e"],["a","h","k","r"],["a","f","l","v"]], ["oa", "oaa"]))
