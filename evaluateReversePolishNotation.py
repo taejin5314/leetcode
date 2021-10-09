@@ -2,7 +2,17 @@ from typing import List
 
 class Solution:
   def evalRPN(self, tokens: List[str]) -> int:
-    return 0
+    for elm in tokens:
+      if elm == '+':
+        print(elm)
+      elif elm == '-':
+        print(elm)
+      elif elm == '*':
+        print(elm)
+      elif elm == '/':
+        print(elm)
+      else:
+        print(int(elm))
     
 
 problem = Solution()
