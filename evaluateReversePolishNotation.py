@@ -2,17 +2,29 @@ from typing import List
 
 class Solution:
   def evalRPN(self, tokens: List[str]) -> int:
+    stack = []
+
     for elm in tokens:
       if elm == '+':
-        print(elm)
+        a = stack.pop()
+        b = stack.pop()
+        stack.append(b + a)
       elif elm == '-':
-        print(elm)
+        a = stack.pop()
+        b = stack.pop()
+        stack.append(b - a)
       elif elm == '*':
-        print(elm)
+        a = stack.pop()
+        b = stack.pop()
+        stack.append(b * a)
       elif elm == '/':
-        print(elm)
+        a = stack.pop()
+        b = stack.pop()
+        stack.append(int(b / a))
       else:
-        print(int(elm))
+        stack.append(int(elm))
+
+    return stack[0]
     
 
 problem = Solution()
