@@ -13,10 +13,10 @@ class Solution:
       cooldown = dfs(index + 1, buying)
       if buying:
         buy = dfs(index + 1, not buying) - prices[index]
-        obj[(index + 1, buying)] = max(buy, cooldown)
+        obj[(index, buying)] = max(buy, cooldown)
       else:
         sell = dfs(index + 2, not buying) + prices[index]
-        obj[(index + 1, buying)] = max(sell, cooldown)
+        obj[(index, buying)] = max(sell, cooldown)
       
       return obj[(index, buying)]
     
