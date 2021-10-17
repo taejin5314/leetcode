@@ -2,6 +2,7 @@ from typing import List
 
 class Solution:
   def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
+    
     return 0
 
 problem = Solution()
