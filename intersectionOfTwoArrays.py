@@ -2,7 +2,15 @@ from typing import List
 
 class Solution:
   def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-    print(nums2)
+    result = []
+
+    hashSet = set(nums1)
+
+    for num in set(nums2):
+      if num in hashSet:
+        result.append(num)
+    
+    return result
 
 problem = Solution()
 print(problem.intersection([1, 2, 2, 1], [2, 2]))
