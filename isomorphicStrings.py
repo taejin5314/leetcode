@@ -1,11 +1,15 @@
 class Solution:
   def isIsomorphic(self, s: str, t: str) -> bool:
-    hashMap = {}
+    mapST, mapTS = {}, {}
 
-    for c in s:
-      print(c)
+    for c1, c2 in zip(s, t):
 
-    return 0
+      if (c1 in mapST and mapST[c1] != c2) or (c2 in mapTS and mapTS[c2] != c1):
+        return False
+      mapST[c1] = c2
+      mapTS[c2] = c1
+
+    return True
 
 problem = Solution()
 print(problem.isIsomorphic('egg', 'add'))
