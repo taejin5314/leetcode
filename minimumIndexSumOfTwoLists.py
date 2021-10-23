@@ -2,6 +2,7 @@ from typing import List
 
 class Solution:
   def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+    print(list1, list2)
     return 0
 
 problem = Solution()
