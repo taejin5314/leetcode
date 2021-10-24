@@ -2,13 +2,17 @@ class Solution:
   def firstUniqChar(self, s: str) -> int:
     map = {}
 
-    for c in s:
+    for i, c in enumerate(s):
       if c not in map:
-        map[c] = 1
+        map[c] = [1, i]
       else:
-        map[c] += 1
+        map[c][0] += 1
     
-    return map
+    for c in map:
+      if map[c][0] == 1:
+        return map[c][1]
+
+    return -1
 
 problem = Solution()
 print(problem.firstUniqChar('leetcode'))
