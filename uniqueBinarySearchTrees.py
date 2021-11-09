@@ -9,7 +9,6 @@ class Solution:
         right = nodes - root
         total += numTree[left] * numTree[right]
       numTree[nodes] = total
-      
     return numTree[n]
 
 problem = Solution()
