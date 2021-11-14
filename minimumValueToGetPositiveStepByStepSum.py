@@ -8,6 +8,7 @@ class Solution:
       sum = min(sum, temp)
     
     return max(1-sum, 1)
+    
 problem = Solution()
 print(problem.minStartValue([-3, 2, -3, 4, 2]))
 print(problem.minStartValue([1, 2]))
