@@ -9,7 +9,6 @@ class Solution:
       res = res >> 1
     
     return count
-
 problem = Solution()
 print(problem.hammingDistance(1, 4))
 print(problem.hammingDistance(3, 1))
