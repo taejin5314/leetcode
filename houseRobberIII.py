@@ -9,6 +9,7 @@ class TreeNode:
 class Solution:
   def rob(self, root: Optional[TreeNode]) -> int:
     return max(self.dfs(root))
+    
 
   def dfs(self, root: TreeNode):
     if not root:
