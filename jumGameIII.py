@@ -21,7 +21,6 @@ class Solution:
 
       if left >= 0 and not visited[left]:
         queue.append(left)
-
     return False
 
 problem = Solution()
