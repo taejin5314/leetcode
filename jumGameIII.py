@@ -19,6 +19,7 @@ class Solution:
       if right < len(arr) and not visited[right]:
         queue.append(right)
 
+
       if left >= 0 and not visited[left]:
         queue.append(left)
     return False
