@@ -8,7 +8,6 @@ class Solution:
         
         dp = [[0]*(cols+1) for _ in range(rows+1)]
         max_side = 0
-        
         for r in range(rows):
             for c in range(cols):
                 if matrix[r][c] == '1':
