@@ -1,6 +1,6 @@
 class Solution:
   def isPowerOfTwo(self, n: int) -> bool:
-    return n
+    return n > 0 and n & n - 1 == 0
 
 problem = Solution()
 print(problem.isPowerOfTwo(1))
