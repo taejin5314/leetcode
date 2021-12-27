@@ -9,5 +9,6 @@ class Solution:
 
     return bit ^ num
 
+
 problem = Solution()
 print(problem.findComplement(5))
