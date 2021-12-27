@@ -1,6 +1,13 @@
 class Solution:
   def findComplement(self, num: int) -> int:
-    return num
+    bit = 0
+    todo = num
+    while todo:
+      bit = bit << 1
+      bit = bit ^ 1
+      todo = todo >> 1
+
+    return bit ^ num
 
 problem = Solution()
 print(problem.findComplement(5))
