@@ -12,6 +12,7 @@ class Solution:
       result.append(path)
       return
     
+    
     for i in range(1, len(s) + 1):
       if self.isPal(s[:i]):
         self.dfs(s[i:], path+[s[:i]], result)
