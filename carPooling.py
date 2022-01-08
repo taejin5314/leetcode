@@ -2,7 +2,6 @@ class Solution:
     def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
         start_timings = sorted( [(trip[1], trip[0]) for trip in trips] )
         end_timings = sorted( [(trip[2], trip[0]) for trip in trips] )
-
         passengers = 0
         start = end = 0
         while( start < len(trips) ):
