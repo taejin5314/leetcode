@@ -1,12 +1,15 @@
+from re import S
+
+
 class Solution:
     def myAtoi(self, s: str) -> int:
         value, state, pos, sign = 0, 0, 0, 1
 
-        if len(str) == 0:
+        if len(s) == 0:
             return 0
 
-        while pos < len(str):
-            current_char = str[pos]
+        while pos < len(S):
+            current_char = s[pos]
             if state == 0:
                 if current_char == " ":
                     state = 0
