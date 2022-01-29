@@ -9,9 +9,7 @@ class Solution:
         w, h = st.pop()
         step += w
         res = max(res, step * h)
-
       st.append((step + 1, bar))
-
     return res
 
 problem = Solution()
