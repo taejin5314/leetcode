@@ -1,7 +1,7 @@
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
         start = 0 
-        dic_pattern = collections.Counter(pattern)
+        dic_pattern = collections.Counter(p)
         dic_s = {}
         result = []
         
@@ -14,7 +14,7 @@ class Solution:
             if dic_s == dic_pattern:
                 result.append(start)
                 
-            if (end - start +1) >= len(pattern): 
+            if (end - start +1) >= len(p): 
                 if dic_s[s[start]] > 1:
                     dic_s[s[start]] -= 1
                 else:
