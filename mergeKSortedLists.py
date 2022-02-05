@@ -1,5 +1,6 @@
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        
         values, head, pointer = [], None, None
         
         for l in lists:
