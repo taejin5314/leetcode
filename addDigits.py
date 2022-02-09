@@ -3,4 +3,5 @@ class Solution:
         i = sum([int(x) for x in str(num)])
         while i > 9:
             i = sum([int(x) for x in str(i)])
+            
         return i
