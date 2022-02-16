@@ -6,4 +6,5 @@ class Solution:
                 h.next, head.next = head, h.next
                 h.next.next = self.swapPairs(h.next.next)
                 return h
+                
         return head
