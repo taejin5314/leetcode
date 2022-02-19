@@ -16,5 +16,4 @@ class Solution:
         i = 0
         while( i <len(stack) and stack[i] == "0" ):
             i += 1
-            
         return ''.join(stack[i:]) if (len(stack[i:]) > 0) else "0"    
