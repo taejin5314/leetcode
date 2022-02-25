@@ -9,7 +9,6 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         p.next = None
-        
         return self.merge(self.sortList(head), self.sortList(slow))
     
     def merge(self, l1, l2):
