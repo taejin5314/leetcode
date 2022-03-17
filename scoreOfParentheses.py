@@ -1,6 +1,7 @@
 class Solution:
     def scoreOfParentheses(self, s: str) -> int:
-      return self.helper(S,0,len(S)-1)        
+      return self.helper(S,0,len(S)-1)  
+            
     def helper(self,S,l,r):
       if r-l==1:
         return 1
