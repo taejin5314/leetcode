@@ -2,16 +2,16 @@ class Solution:
     def makesquare(self, matchsticks: List[int]) -> bool:
         k = 4 
         
-        s = sum(nums)
+        s = sum(matchsticks)
         if s % k != 0:
             return False
         
         target = s // k 
-        n = len(nums)
+        n = len(matchsticks)
         
         def dfs(m):
             
-            stack = [(m, 0, {m}, nums[m])]
+            stack = [(m, 0, {m}, matchsticks[m])]
             while stack:
                 #print(stack)
                 node, cnt, path, sums = stack.pop()
@@ -22,12 +22,12 @@ class Solution:
                         return True
                     for i in range(0, n):
                         if i not in path:
-                            stack.append((i, cnt+1, path | {i}, nums[i]))
+                            stack.append((i, cnt+1, path | {i}, matchsticks[i]))
 
                 elif sums < target:
                     for i in range(node+1, n):
                         if i not in path:
-                            stack.append((i, cnt, path | {i}, sums + nums[i]))
+                            stack.append((i, cnt, path | {i}, sums + matchsticks[i]))
                 else: # sums > target
                     pass
             return False
